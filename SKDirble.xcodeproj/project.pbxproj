@@ -20,6 +20,27 @@
 			remoteGlobalIDString = 82A27CE91CE9A69D003F8706;
 			remoteInfo = SKDirble;
 		};
+		82A27D181CE9A99D003F8706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82A27D111CE9A99D003F8706 /* SKUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 826803541CA94AE600C8B952;
+			remoteInfo = SKUtils;
+		};
+		82A27D1A1CE9A99D003F8706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82A27D111CE9A99D003F8706 /* SKUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8268035E1CA94AE700C8B952;
+			remoteInfo = SKUtilsTests;
+		};
+		82A27D1C1CE9A99D003F8706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82A27D111CE9A99D003F8706 /* SKUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82FB6D961CB6E5AE000DE9E9;
+			remoteInfo = "SKUtils-iOS7";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +50,7 @@
 		82A27CF41CE9A69E003F8706 /* SKDirbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKDirbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A27CF91CE9A69E003F8706 /* SKDirbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKDirbleTests.m; sourceTree = "<group>"; };
 		82A27CFB1CE9A69E003F8706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82A27D111CE9A99D003F8706 /* SKUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SKUtils.xcodeproj; path = Libraries/SKUtils/SKUtils.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +93,7 @@
 		82A27CEC1CE9A69D003F8706 /* SKDirble */ = {
 			isa = PBXGroup;
 			children = (
+				82A27D101CE9A8FA003F8706 /* Framework */,
 				82A27CED1CE9A69D003F8706 /* SKDirble.h */,
 				82A27CEF1CE9A69D003F8706 /* Info.plist */,
 			);
@@ -84,6 +107,24 @@
 				82A27CFB1CE9A69E003F8706 /* Info.plist */,
 			);
 			path = SKDirbleTests;
+			sourceTree = "<group>";
+		};
+		82A27D101CE9A8FA003F8706 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				82A27D111CE9A99D003F8706 /* SKUtils.xcodeproj */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		82A27D121CE9A99D003F8706 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82A27D191CE9A99D003F8706 /* SKUtils.framework */,
+				82A27D1B1CE9A99D003F8706 /* SKUtilsTests.xctest */,
+				82A27D1D1CE9A99D003F8706 /* SKUtils.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +204,12 @@
 			mainGroup = 82A27CE01CE9A69D003F8706;
 			productRefGroup = 82A27CEB1CE9A69D003F8706 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 82A27D121CE9A99D003F8706 /* Products */;
+					ProjectRef = 82A27D111CE9A99D003F8706 /* SKUtils.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				82A27CE91CE9A69D003F8706 /* SKDirble */,
@@ -170,6 +217,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		82A27D191CE9A99D003F8706 /* SKUtils.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SKUtils.framework;
+			remoteRef = 82A27D181CE9A99D003F8706 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82A27D1B1CE9A99D003F8706 /* SKUtilsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SKUtilsTests.xctest;
+			remoteRef = 82A27D1A1CE9A99D003F8706 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82A27D1D1CE9A99D003F8706 /* SKUtils.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SKUtils.framework;
+			remoteRef = 82A27D1C1CE9A99D003F8706 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		82A27CE81CE9A69D003F8706 /* Resources */ = {
@@ -376,6 +447,7 @@
 				82A27D001CE9A69E003F8706 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82A27D011CE9A69E003F8706 /* Build configuration list for PBXNativeTarget "SKDirbleTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +456,7 @@
 				82A27D031CE9A69E003F8706 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
