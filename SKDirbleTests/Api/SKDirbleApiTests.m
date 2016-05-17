@@ -37,7 +37,18 @@ static NSString * const kKeywordToTest = @"Japan";
     [super tearDown];
 }
 
-- (void)test_shouldGetRecentAddedSiteList {
+- (void)test_shouldGetStationList {
+    NSError *error = nil;
+    
+    NSArray *stations = [SKDirbleApi listStations:kDirbleToken pageIndex:0 pageSize:30 error:&error];
+    
+    NSLog(@"stations: %@", stations);
+    
+    XCTAssertEqual([stations count], 30);
+    XCTAssertNil(error);
+}
+
+- (void)test_shouldGetRecentAddedStationList {
     NSError *error = nil;
     
     NSArray *recentAddedStations = [SKDirbleApi listRecentAddedStations:kDirbleToken pageIndex:0 pageSize:30 error:&error];
@@ -48,7 +59,7 @@ static NSString * const kKeywordToTest = @"Japan";
     XCTAssertNil(error);
 }
 
-- (void)test_shouldGetPopularSiteList {
+- (void)test_shouldGetPopularStationList {
     NSError *error = nil;
     
     NSArray *popularStations = [SKDirbleApi listPopularStations:kDirbleToken pageIndex:0 pageSize:30 error:&error];
@@ -89,7 +100,7 @@ static NSString * const kKeywordToTest = @"Japan";
     XCTAssertNil(error);
 }
 
-- (void)test_shouldGetStationsUnderCategory {
+- (void)test_shouldGetStationsInCategory {
     NSError *error = nil;
     
     NSArray *stations = [SKDirbleApi listStations:kDirbleToken category:kChildCategoryToTest pageIndex:0 pageSize:30 error:&error];
@@ -102,7 +113,7 @@ static NSString * const kKeywordToTest = @"Japan";
 - (void)test_shouldSearchStations {
     NSError *error = nil;
     
-    NSArray *stations = [SKDirbleApi searchStations:kDirbleToken query:kKeywordToTest pageIndex:0 error:&error];
+    NSArray *stations = [SKDirbleApi listStations:kDirbleToken keyword:kKeywordToTest pageIndex:0 error:&error];
     
     NSLog(@"stations: %@", stations);
     

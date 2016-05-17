@@ -10,6 +10,7 @@
 
 @implementation SKDirbleApi
 
+static NSString * const kApiStations = @"v2/stations";
 static NSString * const kApiRecentAddedStations = @"v2/stations/recent";
 static NSString * const kApiPopularStations = @"v2/stations/popular";
 
@@ -28,6 +29,17 @@ static NSString * const kApiStationsInCountry = @"v2/countries/%@/stations";
 static NSString * const kParameterToken = @"token";
 static NSString * const kParameterPageIndex = @"page";
 static NSString * const kParameterPageSize = @"per_page";
+
++ (nullable NSArray *)listStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr {
+
+    NSDictionary *parameter = @{
+                                kParameterToken : token,
+                                kParameterPageIndex : @(pageIndex),
+                                kParameterPageSize : @(pageSize)
+                                };
+    
+    return [SKDirbleApi objectForApi:kApiStations andParameter:parameter error:errorPtr];
+}
 
 + (nullable NSArray *)listRecentAddedStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr {
 
@@ -95,9 +107,9 @@ static NSString * const kParameterPageSize = @"per_page";
     return [SKDirbleApi objectForApi:api andParameter:parameter error:errorPtr];
 }
 
-+ (nullable NSArray *)searchStations:(nonnull NSString *)token query:(nonnull NSString *)query pageIndex:(NSUInteger)pageIndex error:(NSError * _Nullable * _Nullable)errorPtr {
++ (nullable NSArray *)listStations:(nonnull NSString *)token keyword:(nonnull NSString *)keyword pageIndex:(NSUInteger)pageIndex error:(NSError * _Nullable * _Nullable)errorPtr {
 
-    NSString *api = [NSString stringWithFormat:kApiSearch, query];
+    NSString *api = [NSString stringWithFormat:kApiSearch, keyword];
     
     NSDictionary *parameter = @{
                                 kParameterToken : token,

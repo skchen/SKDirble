@@ -14,6 +14,7 @@
 
 @interface SKDirbleApi : NSObject
 
++ (nullable NSArray *)listStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
 + (nullable NSArray *)listRecentAddedStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
 + (nullable NSArray *)listPopularStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
 
@@ -22,7 +23,7 @@
 + (nullable NSArray *)listChildCategories:(nonnull NSString *)token primaryCategory:(NSInteger)primaryCategoryId pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
 + (nullable NSArray *)listStations:(nonnull NSString *)token category:(NSInteger)categoryId pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
 
-+ (nullable NSArray *)searchStations:(nonnull NSString *)token query:(nonnull NSString *)query pageIndex:(NSUInteger)pageIndex error:(NSError * _Nullable * _Nullable)errorPtr;
++ (nullable NSArray *)listStations:(nonnull NSString *)token keyword:(nonnull NSString *)keyword pageIndex:(NSUInteger)pageIndex error:(NSError * _Nullable * _Nullable)errorPtr;
 
 + (nullable NSArray *)listCountries:(nonnull NSString *)token error:(NSError * _Nullable * _Nullable)errorPtr;
 + (nullable NSArray *)listContinents:(nonnull NSString *)token error:(NSError * _Nullable * _Nullable)errorPtr;
