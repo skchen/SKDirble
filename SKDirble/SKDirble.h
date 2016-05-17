@@ -16,4 +16,5 @@ FOUNDATION_EXPORT const unsigned char SKDirbleVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SKDirble/PublicHeader.h>
 
-
+#import <SKDirble/SKDirbleBrowser.h>
+#import <SKDirble/SKDirbleApi.h>

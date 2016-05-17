@@ -10,11 +10,11 @@
 		82A27CEE1CE9A69D003F8706 /* SKDirble.h in Headers */ = {isa = PBXBuildFile; fileRef = 82A27CED1CE9A69D003F8706 /* SKDirble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82A27CF51CE9A69E003F8706 /* SKDirble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A27CEA1CE9A69D003F8706 /* SKDirble.framework */; };
 		82A27CFA1CE9A69E003F8706 /* SKDirbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A27CF91CE9A69E003F8706 /* SKDirbleTests.m */; };
-		82A27D291CE9C29E003F8706 /* SKDirbleApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 82A27D271CE9C29E003F8706 /* SKDirbleApi.h */; };
+		82A27D291CE9C29E003F8706 /* SKDirbleApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 82A27D271CE9C29E003F8706 /* SKDirbleApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82A27D2A1CE9C29E003F8706 /* SKDirbleApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A27D281CE9C29E003F8706 /* SKDirbleApi.m */; };
 		82ABC7E51CE9F82F00056232 /* SKUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A27D191CE9A99D003F8706 /* SKUtils.framework */; };
 		82ABC7E71CE9FB2B00056232 /* SKDirbleApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ABC7E61CE9FB2B00056232 /* SKDirbleApiTests.m */; };
-		82ABC7EB1CEA10BE00056232 /* SKDirbleBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 82ABC7E91CEA10BE00056232 /* SKDirbleBrowser.h */; };
+		82ABC7EB1CEA10BE00056232 /* SKDirbleBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 82ABC7E91CEA10BE00056232 /* SKDirbleBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82ABC7EC1CEA10BE00056232 /* SKDirbleBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ABC7EA1CEA10BE00056232 /* SKDirbleBrowser.m */; };
 		82ABC8031CEAFE3100056232 /* SKDirbleBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ABC8021CEAFE3100056232 /* SKDirbleBrowserTests.m */; };
 /* End PBXBuildFile section */
