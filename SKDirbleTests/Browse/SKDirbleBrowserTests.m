@@ -11,7 +11,7 @@
 #import "SKDirbleBrowser.h"
 
 #warning should fill in token before perform test
-static NSString * const kDirbleToken = @"f307d6cc98e2c9f32fb928fb3f";
+static NSString * const kDirbleToken = @"";
 
 @interface SKDirbleBrowserTests : XCTestCase
 
