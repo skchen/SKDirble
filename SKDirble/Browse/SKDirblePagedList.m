@@ -33,6 +33,10 @@
     return _mutableList;
 }
 
+- (void)append:(id<SKPagedList>)newPage {
+    [self addObjectsFromArray:newPage.list];
+}
+
 - (void)addObjectsFromArray:(nonnull NSArray *)otherArray {
     [_mutableList addObjectsFromArray:otherArray];
     _nextPage++;
