@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@import SKUtils;
+#import <SKUtils/SKUtils.h>
 
 @class SKDirbleObject;
 

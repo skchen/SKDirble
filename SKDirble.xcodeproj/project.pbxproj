@@ -16,6 +16,8 @@
 		82ABC7EB1CEA10BE00056232 /* SKDirbleBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 82ABC7E91CEA10BE00056232 /* SKDirbleBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82ABC7EC1CEA10BE00056232 /* SKDirbleBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ABC7EA1CEA10BE00056232 /* SKDirbleBrowser.m */; };
 		82ABC8031CEAFE3100056232 /* SKDirbleBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82ABC8021CEAFE3100056232 /* SKDirbleBrowserTests.m */; };
+		82FF92D51CFD18FF00CBE12E /* SKDirblePagedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FF92D31CFD18FF00CBE12E /* SKDirblePagedList.h */; };
+		82FF92D61CFD18FF00CBE12E /* SKDirblePagedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FF92D41CFD18FF00CBE12E /* SKDirblePagedList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		82ABC7E91CEA10BE00056232 /* SKDirbleBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDirbleBrowser.h; sourceTree = "<group>"; };
 		82ABC7EA1CEA10BE00056232 /* SKDirbleBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDirbleBrowser.m; sourceTree = "<group>"; };
 		82ABC8021CEAFE3100056232 /* SKDirbleBrowserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDirbleBrowserTests.m; sourceTree = "<group>"; };
+		82FF92D31CFD18FF00CBE12E /* SKDirblePagedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDirblePagedList.h; sourceTree = "<group>"; };
+		82FF92D41CFD18FF00CBE12E /* SKDirblePagedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDirblePagedList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 			children = (
 				82ABC7E91CEA10BE00056232 /* SKDirbleBrowser.h */,
 				82ABC7EA1CEA10BE00056232 /* SKDirbleBrowser.m */,
+				82FF92D31CFD18FF00CBE12E /* SKDirblePagedList.h */,
+				82FF92D41CFD18FF00CBE12E /* SKDirblePagedList.m */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 			files = (
 				82A27CEE1CE9A69D003F8706 /* SKDirble.h in Headers */,
 				82A27D291CE9C29E003F8706 /* SKDirbleApi.h in Headers */,
+				82FF92D51CFD18FF00CBE12E /* SKDirblePagedList.h in Headers */,
 				82ABC7EB1CEA10BE00056232 /* SKDirbleBrowser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +325,7 @@
 			files = (
 				82ABC7EC1CEA10BE00056232 /* SKDirbleBrowser.m in Sources */,
 				82A27D2A1CE9C29E003F8706 /* SKDirbleApi.m in Sources */,
+				82FF92D61CFD18FF00CBE12E /* SKDirblePagedList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "SKDirbleBrowser.h"
 
+#import "SKDirblePagedList.h"
 #import "SKDirbleApi.h"
 
 @import SKUtils;
@@ -47,7 +48,7 @@ typedef NSArray * _Nullable (^SKDirblePagedListRequest)(NSInteger pageIndex, NSE
         return [SKDirbleApi listPopularStations:_token pageIndex:pageIndex pageSize:_pageSize error:errorPtr];
     }];
     
-    [self pagedList:refresh extend:extend cacheKey:cacheKey request:dirblePagedListRequest success:success failure:failure];
+    [self pagedList:refresh extend:extend cacheKey:cacheKey initial:[self dirblePagedListInitial] request:dirblePagedListRequest success:success failure:failure];
 }
 
 - (void)listRecentAddedStations:(BOOL)refresh extend:(BOOL)extend success:(nonnull SKPagedListCallback)success failure:(nonnull SKErrorCallback)failure {
@@ -58,20 +59,33 @@ typedef NSArray * _Nullable (^SKDirblePagedListRequest)(NSInteger pageIndex, NSE
         return [SKDirbleApi listRecentAddedStations:_token pageIndex:pageIndex pageSize:_pageSize error:errorPtr];
     }];
     
-    [self pagedList:refresh extend:extend cacheKey:cacheKey request:dirblePagedListRequest success:success failure:failure];
+    [self pagedList:refresh extend:extend cacheKey:cacheKey initial:[self dirblePagedListInitial] request:dirblePagedListRequest success:success failure:failure];
+}
+
+- (SKPagedListInitial)dirblePagedListInitial {
+    return ^id<SKPagedList> _Nonnull(void) {
+        return [[SKDirblePagedList alloc] initWithPageSize:_pageSize];
+    };
 }
 
 - (SKPagedListRequest)dirblePagedRequest:(SKDirblePagedListRequest)dirbleRequest {
-    return ^NSError * _Nullable(SKPagedList * _Nonnull pagedList) {
+    
+    return ^NSError * _Nullable (id<SKPagedList> _Nullable pagedList) {
+        SKDirblePagedList *dirblePagedList = (SKDirblePagedList *)pagedList;
+        
         NSError *error = nil;
-        NSInteger pageIndex = (pagedList.nextPage)?([pagedList.nextPage integerValue]):(0);
+        
+        NSUInteger pageIndex = 0;
+        if(dirblePagedList) {
+            pageIndex = dirblePagedList.nextPage;
+        } else {
+            dirblePagedList = [[SKDirblePagedList alloc] initWithPageSize:_pageSize];
+        }
         
         NSArray *pagedResults = dirbleRequest(pageIndex, &error);
         
         if(!error) {
-            [pagedList.list addObjectsFromArray:pagedResults];
-            pagedList.nextPage = @(pageIndex+1);
-            pagedList.finished = ([pagedResults count]<_pageSize);
+            [dirblePagedList addObjectsFromArray:pagedResults];
         }
         
         return error;

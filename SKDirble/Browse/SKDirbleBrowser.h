@@ -6,7 +6,7 @@
 //  Copyright © 2016年 SK. All rights reserved.
 //
 
-#import <SKUtils/SKPagedAsync.h>
+#import <SKUtils/SKUtils.h>
 
 @interface SKDirbleBrowser : SKPagedAsync
 
