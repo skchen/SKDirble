@@ -33,8 +33,10 @@
     return _mutableList;
 }
 
-- (void)append:(id<SKPagedList>)newPage {
-    [self addObjectsFromArray:newPage.list];
+- (void)append:(id)newPage {
+    if([newPage conformsToProtocol:@protocol(SKPagedList)]) {
+        [self addObjectsFromArray:((id<SKPagedList>)newPage).list];
+    }
 }
 
 - (void)addObjectsFromArray:(nonnull NSArray *)otherArray {
