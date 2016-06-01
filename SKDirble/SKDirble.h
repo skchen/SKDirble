@@ -18,3 +18,7 @@ FOUNDATION_EXPORT const unsigned char SKDirbleVersionString[];
 
 #import <SKDirble/SKDirbleBrowser.h>
 #import <SKDirble/SKDirbleApi.h>
+
+#import <SKDirble/SKDirbleModel.h>
+#import <SKDirble/SKDirbleSiteList.h>
+#import <SKDirble/SKDirbleSite.h>

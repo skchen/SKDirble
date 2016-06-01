@@ -8,6 +8,8 @@
 
 #import "SKDirbleApi.h"
 
+#import "SKDirbleSiteList.h"
+
 @implementation SKDirbleApi
 
 static NSString * const kApiStations = @"v2/stations";
@@ -41,7 +43,7 @@ static NSString * const kParameterPageSize = @"per_page";
     return [SKDirbleApi objectForApi:kApiStations andParameter:parameter error:errorPtr];
 }
 
-+ (nullable NSArray *)listRecentAddedStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr {
++ (nullable SKDirbleSiteList *)listRecentAddedStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr {
 
     NSDictionary *parameter = @{
                                 kParameterToken : token,
@@ -49,10 +51,10 @@ static NSString * const kParameterPageSize = @"per_page";
                                 kParameterPageSize : @(pageSize)
                                 };
     
-    return [SKDirbleApi objectForApi:kApiRecentAddedStations andParameter:parameter error:errorPtr];
+    return [SKDirbleApi siteListForApi:kApiRecentAddedStations andParameter:parameter error:errorPtr];
 }
 
-+ (nullable NSArray *)listPopularStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr {
++ (nullable SKDirbleSiteList *)listPopularStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr {
 
     NSDictionary *parameter = @{
                                 kParameterToken : token,
@@ -60,7 +62,7 @@ static NSString * const kParameterPageSize = @"per_page";
                                 kParameterPageSize : @(pageSize)
                                 };
     
-    return [SKDirbleApi objectForApi:kApiPopularStations andParameter:parameter error:errorPtr];
+    return [SKDirbleApi siteListForApi:kApiPopularStations andParameter:parameter error:errorPtr];
 }
 
 + (nullable NSArray *)listCategories:(nonnull NSString *)token error:(NSError * _Nullable * _Nullable)errorPtr {
@@ -161,6 +163,16 @@ static NSString * const kParameterPageSize = @"per_page";
                                 };
     
     return [SKDirbleApi objectForApi:api andParameter:parameter error:errorPtr];
+}
+
++ (nullable SKDirbleSiteList *)siteListForApi:(nonnull NSString *)api andParameter:(nullable NSDictionary *)parameter error:(NSError **)errorPtr {
+    
+    id json = [SKDirbleApi objectForApi:api andParameter:parameter error:errorPtr];
+    if(json) {
+        return [[SKDirbleSiteList alloc] initWithJson:json];
+    }
+    
+    return nil;
 }
 
 + (nullable id)objectForApi:(nonnull NSString *)api andParameter:(nullable NSDictionary *)parameter error:(NSError **)errorPtr {

@@ -10,13 +10,13 @@
 
 #import <SKUtils/SKUtils.h>
 
-@class SKDirbleObject;
+@class SKDirbleSiteList;
 
 @interface SKDirbleApi : NSObject
 
 + (nullable NSArray *)listStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
-+ (nullable NSArray *)listRecentAddedStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
-+ (nullable NSArray *)listPopularStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
++ (nullable SKDirbleSiteList *)listRecentAddedStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
++ (nullable SKDirbleSiteList *)listPopularStations:(nonnull NSString *)token pageIndex:(NSUInteger)pageIndex pageSize:(NSUInteger)pageSize error:(NSError * _Nullable * _Nullable)errorPtr;
 
 + (nullable NSArray *)listCategories:(nonnull NSString *)token error:(NSError * _Nullable * _Nullable)errorPtr;
 + (nullable NSArray *)listPrimaryCategories:(nonnull NSString *)token error:(NSError * _Nullable * _Nullable)errorPtr;
