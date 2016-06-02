@@ -22,4 +22,8 @@
     return self;
 }
 
+- (NSString *)description {
+    return [_json description];
+}
+
 @end
