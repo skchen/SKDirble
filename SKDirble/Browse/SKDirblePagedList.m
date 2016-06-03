@@ -8,6 +8,8 @@
 
 #import "SKDirblePagedList.h"
 
+#import "SKDirbleSiteList.h"
+
 @interface SKDirblePagedList ()
 
 @property(nonatomic, strong, readonly, nonnull) NSMutableArray *mutableList;
@@ -19,12 +21,14 @@
 
 @synthesize finished;
 
-- (nonnull instancetype)initWithPageSize:(NSUInteger)pageSize {
+- (nonnull instancetype)initWithSiteList:(nonnull SKDirbleSiteList *)siteList pageSize:(NSUInteger)pageSize {
     self = [super init];
     
     _mutableList = [[NSMutableArray alloc] init];
     _pageSize = pageSize;
     _nextPage = 0;
+    
+    [self addObjectsFromArray:siteList.sites];
     
     return self;
 }

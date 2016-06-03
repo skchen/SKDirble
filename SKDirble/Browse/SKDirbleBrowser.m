@@ -76,9 +76,7 @@ typedef SKDirbleSiteList * _Nullable (^SKDirblePagedListRequest)(NSInteger pageI
         SKDirbleSiteList *pagedResults = dirbleRequest(pageIndex, errorPtr);
         
         if(!(*errorPtr)) {
-            SKDirblePagedList *newPage = [[SKDirblePagedList alloc] initWithPageSize:_pageSize];
-            [newPage addObjectsFromArray:pagedResults.sites];
-            return newPage;
+            return [[SKDirblePagedList alloc] initWithSiteList:pagedResults pageSize:_pageSize];
         }
         
         return nil;

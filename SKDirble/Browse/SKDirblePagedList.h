@@ -10,12 +10,12 @@
 
 #import <SKUtils/SKUtils.h>
 
+@class SKDirbleSiteList;
+
 @interface SKDirblePagedList : NSObject<SKPagedList>
 
 @property(nonatomic, assign) NSUInteger nextPage;
 
-- (nonnull instancetype)initWithPageSize:(NSUInteger)pageSize;
-
-- (void)addObjectsFromArray:(nonnull NSArray *)otherArray;
+- (nonnull instancetype)initWithSiteList:(nonnull SKDirbleSiteList *)siteList pageSize:(NSUInteger)pageSize;
 
 @end
